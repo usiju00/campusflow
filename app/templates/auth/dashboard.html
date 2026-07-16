@@ -4,8 +4,14 @@
     <title>CampusFlow - Dashboard</title>
 </head>
 <body>
-    <h2>Welcome to CampusFlow</h2>
-    <p>You are logged in!</p>
-    <a href="/login">Logout</a>
+    <h2>Welcome, {{ student.full_name }}</h2>
+    <p>Matric Number: {{ student.matric_number }}</p>
+    <p>Department: {{ student.department }}</p>
+    <p>Level: {{ student.level }}</p>
+    <hr>
+    <h3>Wallet Balance</h3>
+    <p>NGN {{ student.wallet.balance }}</p>
+    <hr>
+    <a href="/logout">Logout</a>
 </body>
 </html>
