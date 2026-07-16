@@ -17,6 +17,11 @@ def create_app():
     migrate.init_app(app, db)
 
     login_manager.login_view = 'auth.login'
+    from app.models import Student
+
+    @login_manager.user_loader
+    def load_user(user_id):
+        return Student.query.get(int(user_id))
 
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp)
