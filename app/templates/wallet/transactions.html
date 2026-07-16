@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CampusFlow - Transactions</title>
+</head>
+<body>
+    <h2>Transaction History</h2>
+    {% for txn in transactions %}
+    <p>
+        {{ txn.transaction_type.upper() }} —
+        NGN {{ txn.amount }} —
+        {{ txn.description }} —
+        Ref: {{ txn.reference }}
+    </p>
+    <hr>
+    {% else %}
+    <p>No transactions yet.</p>
+    {% endfor %}
+    <a href="/wallet">Back to Wallet</a>
+</body>
+</html>
