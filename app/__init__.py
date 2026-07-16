@@ -28,4 +28,7 @@ def create_app():
 
     from app.wallet import bp as wallet_bp
     app.register_blueprint(wallet_bp)
+
+    from app.identity import bp as identity_bp
+    app.register_blueprint(identity_bp)
     return app
