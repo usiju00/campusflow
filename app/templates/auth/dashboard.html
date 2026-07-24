@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CampusFlow - Dashboard</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
     <h2>Welcome, {{ student.full_name }}</h2>
-    <p>Matric Number: {{ student.matric_number }}</p>
-    <p>Department: {{ student.department }}</p>
-    <p>Level: {{ student.level }}</p>
-    <hr>
-    <h3>Wallet Balance</h3>
-    <p>NGN {{ student.wallet.balance }}</p>
-    <hr>
-    <a href="/logout">Logout</a>
-</body>
-</html>
+    <p>{{ student.matric_number }} | {{ student.department }} | Level {{ student.level }}</p>
+</div>
+<div class="card">
+    <h2>Wallet Balance</h2>
+    <p class="balance">NGN {{ student.wallet.balance }}</p>
+</div>
+<div class="card">
+    <h2>Quick Actions</h2>
+    <a class="btn-link" href="/wallet">My Wallet</a>
+    <a class="btn-link" href="/topup">Top Up</a>
+    <a class="btn-link" href="/transfer">Transfer</a>
+    <a class="btn-link" href="/transactions">History</a>
+    <a class="btn-link" href="/identity">My QR ID</a>
+</div>
+{% endblock %}

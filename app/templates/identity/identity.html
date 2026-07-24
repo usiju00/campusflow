@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CampusFlow - My ID</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
     <h2>Student Identity Card</h2>
     <p><strong>Name:</strong> {{ student.full_name }}</p>
     <p><strong>Matric:</strong> {{ student.matric_number }}</p>
     <p><strong>Department:</strong> {{ student.department }}</p>
     <p><strong>Level:</strong> {{ student.level }}</p>
-    <hr>
-    <h3>My QR Code</h3>
+</div>
+<div class="card">
+    <h2>My QR Code</h2>
     <img src="/qrcode" width="200" height="200">
-    <br><br>
-    <a href="/dashboard">Back to Dashboard</a>
-</body>
-</html>
+</div>
+<a class="btn-link" href="/dashboard">Back to Dashboard</a>
+{% endblock %}
