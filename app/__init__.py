@@ -31,4 +31,7 @@ def create_app():
 
     from app.identity import bp as identity_bp
     app.register_blueprint(identity_bp)
+
+    from app.admin import bp as admin_bp
+    app.register_blueprint(admin_bp)
     return app

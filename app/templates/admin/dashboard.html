@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <h2>Admin Dashboard</h2>
+</div>
+<div class="card">
+    <h2>Total Students</h2>
+    <p class="balance">{{ total_students }}</p>
+</div>
+<div class="card">
+    <h2>Total Transactions</h2>
+    <p class="balance">{{ total_transactions }}</p>
+</div>
+<div class="card">
+    <h2>Total Balance in System</h2>
+    <p class="balance">NGN {{ total_balance }}</p>
+</div>
+<div class="card">
+    <h2>Recent Transactions</h2>
+    {% for txn in recent %}
+    <div class="txn">
+        <span class="{{ txn.transaction_type }}">
+            {{ txn.transaction_type.upper() }}
+        </span>
+        — NGN {{ txn.amount }}
+        — {{ txn.description }}
+    </div>
+    {% endfor %}
+</div>
+<a class="btn-link" href="/dashboard">Back to Dashboard</a>
+{% endblock %}
